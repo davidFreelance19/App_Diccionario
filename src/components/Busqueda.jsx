@@ -3,7 +3,6 @@ import PartSpeech from "./PartSpeech";
 import iconPlay from "../assets/icon-play.svg";
 const Busqueda = ({ respuesta }) => {
   const { word, phonetic, meanings, sourceUrls, phonetics } = respuesta;
-
   const {
     0: { audio },
   } = phonetics.filter((phonetic) => phonetic.audio !== "");
@@ -20,7 +19,7 @@ const Busqueda = ({ respuesta }) => {
           onClick={() => document.querySelector("#audio").play()}
         />
         <audio id="audio">
-          <source src={ audio.length > 0 ? audio : ''} type="audio/mp3" />
+          <source src={audio.length > 0 ? audio : ""} type="audio/mp3" />
         </audio>
       </blockquote>
 
@@ -28,12 +27,13 @@ const Busqueda = ({ respuesta }) => {
         <PartSpeech speech={speech} key={speech.partOfSpeech} />
       ))}
       <div className="line line-w"></div>
-      <p>
+      <div className="source">
         Source:{" "}
-        <span>
-          <a href={sourceUrls}>{sourceUrls}</a>
-        </span>
-      </p>
+        {sourceUrls.map((url) => (
+            <a href={sourceUrls}>{sourceUrls}</a>
+          
+        ))}
+      </div>
     </div>
   );
 };

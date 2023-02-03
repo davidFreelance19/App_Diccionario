@@ -2,6 +2,7 @@ import Definition from "./Definition";
 import Sinonimos from "./Sinonimos";
 const PartSpeech = ({ speech }) => {
   const { partOfSpeech, synonyms, definitions } = speech;
+
   return (
     <div className="grid">
       <section className="container__line">

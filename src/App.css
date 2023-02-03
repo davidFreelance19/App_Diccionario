@@ -28,6 +28,7 @@ main{
   width: 90%;
   margin: 0 auto;
   margin-top: 2rem;
+  word-break: break-word;
 }
 @media (min-width: 1025px) {
      main{
@@ -85,9 +86,7 @@ h2{
   font-style: italic;
   font-size: 1.2rem;
 }
-a{
-  display: block;
-}
+
 .example{
   margin-top: 1rem;
 }
@@ -97,9 +96,14 @@ a{
   align-items: center;
 }
 .line{
-  width: 90%;
+  width: 80%;
   height: 2px;
   background-color: var(--clr-neutral-100);
+}
+@media (min-width: 1025px) {
+     .line{
+      width: 90%;
+     }
 }
 .line-w{
   width: 100%;
@@ -117,4 +121,8 @@ a{
 }
 .grid-top{
   margin-top: 3rem;
+}
+.source{
+  display: grid;
+  gap: 1rem;
 }
